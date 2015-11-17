@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular Bands</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href='https://fonts.googleapis.com/css?family=Exo+2:800' rel='stylesheet' type='text/css'>
+
+</head>
+<body ng-app>
+	<div ng-init="police = [
+		{name:'Sting', born: 'Gordon Matthew Sumner', instrument: 'vocals and base', src: 'images/sting.jpg'},
+		{name:'Stewart', born: 'Stewart Copeland', instrument: 'drums', src: 'images/stewart.jpg'},
+		{name:'Andy', born: 'Andy Summers', instrument: 'guitar', src: 'images/andy.jpg'}
+		]">
+
+		<div class = "container-fluid">
+
+			<div class ="jumbotron color">
+				<div class="container">
+       				 <div class="row">
+           				 <div class="col-md-6" "col-sm-6" "col-xs-6">
+							<h1>The Police</h1>
+						</div>
+						<div class="col-md-6" "col-sm-6" "col-xs-6">
+							<img class="pull-right img-responsive" src="images/images-2.jpeg"/img>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class = "row">
+				<div ng-repeat="officer in police" class="col-md-4" "col-sm-4" "col-xs-4" "center">
+				<h1>{{officer.name}}</h1>
+				<p><i>born:</i> {{officer.born}}</p>
+				<h3><i>instrument:</i> {{officer.instrument}}</h3>
+				<img class = "img-responsive" ng-src="{{officer.src}}"/>
+				</div>
+
+		</div>
+	</div>
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
+<script src="angular.min.js"></script>
+</body>
+</html>
+
+
+<div class="staffContainer">
+    <div class="row" ng-repeat="staff in staffList">
+        <div class="col-md-4" ng-repeat="item in staff">{{item.FullName.length > 0 ? item.FullName + ": Rm " + item.RoomNumber : ""}}</div>
+    </div>
+</div>
